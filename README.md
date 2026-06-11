@@ -46,4 +46,4 @@ This is a **learning repo**. Early files are simpler than later ones — that's 
 
 ---
 
-📂 More about me and what I'm building: [github.com/siddharthkumarx]](https://github.com/siddharthkumarx)
+📂 More about me and what I'm building: [github.com/siddharthkumarx](https://github.com/siddharthkumarx)
