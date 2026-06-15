@@ -1,49 +1,44 @@
 <!--
 SETUP (invisible on GitHub):
-1. Open your existing sql-practice repo → README.md → pencil icon → replace everything with this file → Commit.
-2. Reorganize your .sql files into the folder structure below (you can do this on GitHub web:
-   when editing/creating a file, type "01_foundations/01_select_basics.sql" as the filename — GitHub creates the folder).
-3. Replace [YOUR-USERNAME] if it appears anywhere.
+Open your sql-practice repo, replace README.md with this file, and commit.
+Reorganize your .sql files into the folders shown below (on GitHub web, name a new file
+"01_foundations/01_select_basics.sql" and it creates the folder).
+Replace [your-username] if it appears below.
 -->
 
-# 🗄️ SQL Practice — Data Engineering Foundations
+# SQL Practice
 
-Every SQL concept I've learned since **April 2026**, practiced hands-on in MySQL Workbench and committed here session by session. This repo is both my proof of work and my personal revision reference.
+Every SQL concept I've worked through since April 2026, practiced in MySQL Workbench and committed session by session. This repository is both my record of progress and my own revision reference.
 
-## 📁 Structure
+## Structure
 
 ```
 sql-practice/
-├── 01_foundations/      # SELECT, WHERE, AND/OR/NOT, NULL handling, ORDER BY,
-│                        # aggregate functions, GROUP BY, HAVING
-├── 02_intermediate/     # INNER/LEFT/RIGHT/CROSS/SELF joins, FULL JOIN via UNION,
-│                        # subqueries, CTEs, window functions, string & date
-│                        # functions, casting, CASE, UNION
-├── 03_advanced/         # Indexes, EXPLAIN & query optimization, transactions
-│                        # & ACID, views, stored procedures (in progress)
-├── hackerrank/          # Solved HackerRank SQL problems with my notes
-└── datasets/            # Schema + sample data scripts for my local practice_db
-                         # (employees, products tables)
+├── 01_foundations/      SELECT, WHERE, logical operators, NULL handling,
+│                        ORDER BY, aggregate functions, GROUP BY, HAVING
+├── 02_intermediate/     All JOIN types, FULL JOIN via UNION, subqueries,
+│                        CTEs, window functions, string and date functions,
+│                        casting, CASE, UNION
+├── 03_advanced/         Indexes, EXPLAIN and query optimization, transactions
+│                        and ACID, views, stored procedures (in progress)
+├── hackerrank/          Solved HackerRank problems with notes
+└── datasets/            Schema and sample-data scripts for the local practice_db
 ```
 
-## ✅ Topics covered
+## Topics
 
 | Phase | Topics | Status |
-|---|---|---|
-| **1 — Foundations** | SELECT · WHERE · logical operators · NULL handling · ORDER BY · aggregates · GROUP BY · HAVING | ✅ Complete |
-| **2 — Intermediate** | All JOIN types · the duplicate-row fan-out trap · subqueries · CTEs · window functions · string/date functions · casting · CASE · UNION | ✅ Complete |
-| **3 — Advanced** | Indexes ✅ · EXPLAIN & query optimization ✅ · transactions & ACID 🔄 · views, stored procedures, pipeline patterns 🔜 | 🔄 In progress |
+|-------|--------|--------|
+| Foundations | SELECT, WHERE, logical operators, NULL handling, ORDER BY, aggregates, GROUP BY, HAVING | Complete |
+| Intermediate | All JOIN types, the fan-out trap, subqueries, CTEs, window functions, string/date functions, casting, CASE, UNION | Complete |
+| Advanced | Indexes, EXPLAIN and query optimization, transactions and ACID, views, stored procedures | In progress |
 
-## 🧪 How I practice
+## How I practice
 
-- Local MySQL database (`practice_db`) in **MySQL Workbench** — I run and verify every query before committing it
-- **HackerRank** problems alongside structured lessons
-- Each `.sql` file contains runnable queries plus comments on the traps I hit (e.g., MySQL sorts `NULL`s **first** in `ASC`; `WHERE` filters the *joined* table, not the original one; one-to-many joins silently inflating `COUNT()` and `AVG()`)
+Every query is written and verified against a local MySQL database before it's committed, alongside HackerRank problems. The files include comments on the traps worth remembering — for example, that MySQL sorts NULLs first under ASC, that WHERE filters the joined result rather than the original table, and that one-to-many joins can silently inflate COUNT and AVG.
 
-## ⚠️ Honest note
-
-This is a **learning repo**. Early files are simpler than later ones — that's the point. Watch the commit history to see the progression.
+This is a learning repository. Earlier files are simpler than later ones by design; the commit history shows the progression.
 
 ---
 
-📂 More about me and what I'm building: [github.com/siddharthkumarx](https://github.com/siddharthkumarx)
+More of what I'm building: [github.com/[your-username]](https://github.com/[your-username])
