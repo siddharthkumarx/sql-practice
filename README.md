@@ -41,4 +41,4 @@ This is a learning repository. Earlier files are simpler than later ones by desi
 
 ---
 
-More of what I'm building: [github.com/[your-username]](https://github.com/siddharthkumarx)
+More of what I'm building: [github.com/siddharthkumarx](https://github.com/siddharthkumarx)
