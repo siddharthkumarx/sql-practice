@@ -1,0 +1,59 @@
+-- Basic
+
+-- 1. List every employee's name alongside their department_name. (Use an INNER JOIN of employees and departments.)
+-- 2. Now list all employees with their department_name, including anyone whose department is missing or doesn't exist. Which employees show a NULL department, and why? (Name them.)
+-- 3. List every department alongside the employees in it, including any department that currently has no employees. Which department is empty?
+
+SELECT * FROM departments;
+SELECT * FROM employees;
+
+SELECT e.employee_name, d.department_name FROM employees AS e INNER JOIN departments AS d ON e.department_id = d.department_id;
+
+SELECT e.employee_name, d.department_name FROM employees AS e LEFT JOIN departments AS d ON e.department_id = d.department_id; #david and leo shows null because leo has null and david has 5 as department id, due to left join they shows null.
+
+SELECT d.department_name, e.employee_name FROM departments AS d LEFT JOIN employees AS e ON d.department_id = e.department_id; #NO DEPTAMENT IS EMPTY
+
+
+-- Intermediate
+-- 4. Show each employee's name, their department name, and their department's location. Only include employees who actually have a valid matching department.
+-- 5. Count how many employees are in each department. Include departments with zero employees (they should show 0, not be dropped). — join + GROUP BY.
+-- 6. Find every employee whose location (their own column) is different from their department's location. Show employee name, their location, and the department location.
+-- 7. Using t1 and t2: without running it first, predict how many rows each of INNER, LEFT, RIGHT, and FULL join return on t1.id = t2.id. Then run INNER, LEFT, and RIGHT to check. (FULL you'll build in Q10.)
+
+SELECT e.employee_name, d.department_name, d.location FROM employees AS e INNER JOIN departments AS d ON e.department_id = d.department_id;
+
+SELECT d.department_name, COUNT(e.employee_name) AS 'Total Employee' FROM employees AS e LEFT JOIN departments AS d ON e.department_id = d.department_id GROUP BY d.department_name;
+
+SELECT e.employee_name, e.location, d.location FROM employees AS e LEFT JOIN departments AS d ON e.department_id = d.department_id; # not understand question well
+
+SELECT * FROM T1 LEFT JOIN T2 ON T1.ID = T2.ID
+UNION
+SELECT * FROM T1 RIGHT JOIN T2 ON T1.ID = T2.ID;
+
+-- INNER = 25; #5*5 =25
+-- LEFT =25;#5*5 =25
+-- RIGHT = 26; # I DONT KNOW WHY 26 , I THINK 6*5 = 30 , BUT NULL IS NOTHING 5*5 +1 = 26
+-- UNION / FULL = 2; #ITS TOTALLY UNEXPECTED , HOW
+
+-- 8. Self-join: list each employee's name next to their manager's name (column headers employee and manager). Everyone must appear — including Alice and Jack, who have no manager (their manager should show as NULL). Which join type is mandatory here, and why?
+-- 9. Find all employees who earn more than their own manager. Show the employee name, their salary, the manager name, and the manager's salary. (Self-join + a WHERE comparison.)
+-- 10. Emulate a FULL JOIN between employees and departments on department_id, so the result includes David (orphaned dept 5), Leo (NULL dept), and the empty Marketing department — all in one result set. (LEFT JOIN … UNION … RIGHT JOIN.)
+-- Take your time. Paste all ten with their outputs when you're ready, and I'll review line by line.
+
+-- I THINK SELF JOIN RARELY USE IN INDUSTRY, AND I ALSO STUCK IN THIS , I DONT KNOW WHY. i only write syntax and if i take 1st table then for relation i firstly table those table column of same table for primary keys,
+
+
+SELECT m.employee_name AS manager_name , e.employee_name AS employee_name FROM employees AS m JOIN employees AS e ON e.manager_id = m.employee_id;
+
+
+SELECT e.employee_name AS employee_name, e.salary AS employee_salary, m.employee_name AS manager_name, m.salary AS manager_salary 
+FROM employees AS e JOIN employees AS m ON e.department_id = m.department_id
+WHERE e.salary > m.salary;
+
+
+SELECT *  FROM employees AS e LEFT JOIN departments AS d ON e.department_id = d.department_id
+UNION
+SELECT *  FROM employees AS e RIGHT JOIN departments AS d ON e.department_id = d.department_id;
+
+
+
