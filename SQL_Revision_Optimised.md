@@ -100,6 +100,16 @@ FROM emp4 a LEFT JOIN emp4 b ON a.managerid = b.empid;   -- John has managerid N
 ```
 ***if you take 1st table for join then also take 1st coloum for relation like ''emp4'' as a left join emp4 as b ON  a.coloum = b.coloum**
 
+'''
+SELECT 
+    t1.column_name, 
+    t2.column_name
+FROM 
+    table_name t1
+[INNER | LEFT] JOIN table_name t2 
+    ON t1.matching_column = t2.target_column;
+'''
+
 **Anti-join — prefer this over `NOT IN`:**
 ```sql
 SELECT * FROM employees e
