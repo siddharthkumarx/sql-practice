@@ -98,6 +98,7 @@ Your `table1`/`table2` case: table1 = 5 rows (all id=1); table2 = 5 rows id=1 + 
 SELECT a.empname, b.empname AS manager_name, a.department
 FROM emp4 a LEFT JOIN emp4 b ON a.managerid = b.empid;   -- John has managerid NULL
 ```
+***if you take 1st table for join then also take 1st coloum for relation like ''emp4'' as a left join emp4 as b ON  a.coloum = b.coloum**
 
 **Anti-join — prefer this over `NOT IN`:**
 ```sql
